@@ -71,7 +71,7 @@ class Smotr(QWidget):
                 self.polz.append(s)
             self.UI()
         else:
-            self.setWindowTitle('Lös-ученик')
+            self.setWindowTitle('Проект-ученик')
             self.setFixedSize(960, 540)
             self.fon = QLabel(self)
             self.fon.setFixedSize(960, 540)
@@ -172,7 +172,7 @@ class Smotr(QWidget):
             self.right.setEnabled(False)
 
     def UI(self):
-        self.setWindowTitle('Lös-ученик')
+        self.setWindowTitle('Проект-ученик')
         self.setFixedSize(960, 540)
         self.number = 0
         self.left = QPushButton('<', self)
@@ -195,7 +195,9 @@ class Smotr(QWidget):
         self.mainstick = QVBoxLayout(self)
         self.qwestion = QLabel(self.bd[self.number][0], self)
         self.qwestion.setStyleSheet('color: rgb(255, 255, 255);')
-        self.qwestion.setFont(QFont(font, 15))
+        self.qwestion.setFont(QFont(font, 13))
+        self.qwestion.setFixedSize(900, 120)
+        self.qwestion.setWordWrap(True)
         self.mainstick.addWidget(self.qwestion, alignment=Qt.AlignCenter)
         self.complete = QPushButton('Завершить', self)
         self.complete.setFont(QFont(font, 15))
@@ -265,7 +267,7 @@ class Create_work(QWidget):
         self.UI()
 
     def UI(self):
-        self.setWindowTitle('Lös-учитель')
+        self.setWindowTitle('Проект-учитель')
         self.setFixedSize(1280, 720)
         self.fon = QLabel(self)
         pix = choice(['add/fon/fon4.png', 'add/fon/fon5.png', 'add/fon/fon6.png'])
@@ -658,7 +660,7 @@ class Project(QWidget):
             self.redactor.show()
 
     def initUI(self):
-        self.setWindowTitle('Lös')
+        self.setWindowTitle('Проект')
         self.setFixedSize(1280, 720)
 
         self.fon = QLabel(self)
