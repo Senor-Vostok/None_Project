@@ -229,7 +229,7 @@ class Smotr(QWidget):
         allans = len(self.answers)
         seclan = 0
         for i in range(len(self.answers)):
-            if self.answers[i] == self.yanswers[i]:
+            if ''.join((' '.join((self.answers[i]).split())).split('\n')) == self.yanswers[i]:
                 seclan += 1
         return str((seclan * 100) // allans)
 
