@@ -118,7 +118,20 @@ class Smotr(QWidget):
             self.sp = ['None'] * (len(self.bd[self.number][2]) - 1)
             self.ms = QVBoxLayout(self)
             for i in range(len(self.bd[self.number][2]) - 1):
-                self.sp[i] = QRadioButton(self.bd[self.number][2][i], self)
+                word = (self.bd[self.number][2][i]).split(' ')
+                summ = 0
+                nword = list()
+                for j in word:
+                    if summ < 50:
+                        summ += len(j)
+                        nword.append(j)
+                    else:
+                        summ = 0
+                        nword.append('\n')
+                        nword.append(j)
+                nword = ' '.join(nword)
+                print(nword)
+                self.sp[i] = QRadioButton(f' {nword}', self)
                 self.sp[i].setStyleSheet('color: rgb(0, 0, 0);')
                 self.sp[i].setFont(QFont(font, 12))
                 if self.sp[i].text() == self.answers[self.number]:
